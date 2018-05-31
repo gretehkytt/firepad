@@ -1,7 +1,7 @@
 var FirepadUserList = (function() {
   function FirepadUserList(ref, place, userId, displayName) {
     if (!(this instanceof FirepadUserList)) {
-    	console.log('reach');
+    	console.log('reached');
       return new FirepadUserList(ref, place, userId, displayName);
     }
 
