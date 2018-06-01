@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.css" />
 
   <!-- Firepad -->
-  <link rel="stylesheet" href="https://cdn.firebase.com/libs/firepad/1.4.0/firepad.css" />
-  <script src="https://cdn.firebase.com/libs/firepad/1.4.0/firepad.min.js"></script>
+  <link rel="stylesheet" href="./../lib/firepad.css" />
+  <script src="./../lib/firepadfull.js"></script>
 
   <!-- Include example userlist script / CSS.
        Can be downloaded from: https://github.com/firebase/firepad/tree/master/examples/ -->
@@ -38,7 +38,8 @@
 <body onload="init()">
   <div id="userlist"></div>
   <div id="firepad"></div>
-
+  <canvas id="canvas" style="z-index: 0; position: fixed;"></canvas>
+ 
   <script>
     function init() {
       //// Initialize Firebase.
@@ -91,5 +92,6 @@
       return ref;
     }
   </script>
+
 </body>
 </html>

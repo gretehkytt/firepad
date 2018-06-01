@@ -1,7 +1,6 @@
 var FirepadUserList = (function() {
   function FirepadUserList(ref, place, userId, displayName) {
     if (!(this instanceof FirepadUserList)) {
-    	console.log('reached');
       return new FirepadUserList(ref, place, userId, displayName);
     }
 
@@ -64,6 +63,7 @@ var FirepadUserList = (function() {
     var colorDiv = elt('div', null, { 'class': 'firepad-userlist-color-indicator' });
     this.firebaseOn_(myUserRef.child('color'), 'value', function(colorSnapshot) {
       var color = colorSnapshot.val();
+      // create a color for self
       if (isValidColor(color)) {
         colorDiv.style.backgroundColor = color;
       }
@@ -109,7 +109,7 @@ var FirepadUserList = (function() {
       var name = userSnapshot.child('name').val();
       if (typeof name !== 'string') { name = 'Guest'; }
       name = name.substring(0, 20);
-
+ // create a color for each additional user
       var color = userSnapshot.child('color').val();
       if (!isValidColor(color)) {
         color = "#ffb"
